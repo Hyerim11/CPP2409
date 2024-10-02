@@ -77,23 +77,23 @@ int main(){
             // 가로로 승리할 경우
             if (board[i][0] == currentUser && board[i][1] == currentUser && board[i][2] == currentUser) {
                 cout << "가로에 모든 돌이 놓였습니다. " << currentUser <<"의 승리입니다. ";
-                break;
+                return 0;
             }
             // 세로로 승리할 경우
             if (board[0][i] == currentUser && board[1][i] == currentUser && board[2][i] == currentUser) {
-                cout << "게로에 모든 돌이 놓였습니다. " << currentUser <<"의 승리입니다. ";
-                break;
+                cout << "세로에 모든 돌이 놓였습니다. " << currentUser <<"의 승리입니다. ";
+                return 0;
             }
         }
 
-        // 대각선으로 승리할경우
+        // 대각선으로 승리할 경우
         if (board[0][0] == currentUser && board[1][1] == currentUser && board[2][2] == currentUser) {
             cout << " 대각선 왼쪽 위부터 오른쪽 아래까지 모든 돌이 놓였습니다. " << currentUser <<"의 승리입니다. ";
-            break;
+            return 0;
         }
         if (board[0][2] == currentUser && board[1][1] == currentUser && board[2][0] == currentUser) {
             cout << " 대각선 오른쪽 위부터 왼쪽 아래까지 모든 돌이 놓였습니다. " << currentUser <<"의 승리입니다. ";
-            break;
+            return 0;
         }
 
         // 7. 모든칸이 찼으면 종료
