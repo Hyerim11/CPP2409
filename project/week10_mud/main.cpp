@@ -13,6 +13,7 @@ void displayMap(int map[][mapX], int user_x, int user_y);
 bool checkGoal(int map[][mapX], int user_x, int user_y);
 void checkState(int map[][mapX], int user_x, int user_y, User& user);
 bool moveUser(int map[][mapX], int& user_x, int& user_y, User& user, string user_input);
+bool CheckUser(User user);
 
 // 메인  함수
 int main() {
@@ -65,7 +66,7 @@ int main() {
         }
 
         // HP가 0이 되었을 경우 실패를 출력하고 게임을 종료
-        if (user1.GetHP() <= 0) {
+        if (CheckUser(user1) == false) {
             cout << "HP가 0이하가 되었습니다. 실패했습니다." << endl;
             cout << "게임을 종료합니다." << endl;
             break;
@@ -181,6 +182,14 @@ bool moveUser(int map[][mapX], int& user_x, int& user_y, User& user, string user
         user.DecreaseHP(1);
         cout << user_input << " 방향으로 이동합니다." << endl;
         displayMap(map, user_x, user_y);
+        return true;
+    }
+}
+
+bool CheckUser(User user) {
+    if (user.GetHP() <= 0) {
+        return false;
+    } else {
         return true;
     }
 }
