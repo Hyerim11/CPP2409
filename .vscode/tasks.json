@@ -8,8 +8,8 @@
                 "-std=c++14",
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",  // 열려있는 파일만 컴파일
-                //"${fileDirname}\\**.cpp", // 헤더파일 사용할 때
+                //"${file}",  // 열려있는 파일만 컴파일
+                "${fileDirname}\\**.cpp", // 헤더파일 사용할 때
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
